@@ -1,10 +1,10 @@
 module.exports = (sequelize, DataTypes) => {
-    const Posts = sequelize.define("Posts", {
+    const Tasks = sequelize.define("Tasks", {
         title: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        postText: {
+        taskText: {
             type: DataTypes.STRING,
             allowNull: false,
         },
@@ -12,7 +12,15 @@ module.exports = (sequelize, DataTypes) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
+        acomplished: {
+            type: DataTypes.INTEGER,
+            default: 0
+        },
+        tasks: {
+            type: DataTypes.INTEGER,
+            default: 1
+        }
     })
 
-    return Posts
+    return Tasks
 }
